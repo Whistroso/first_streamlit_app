@@ -37,7 +37,7 @@ try:
     # show the newly created df
     streamlit.dataframe(fruityvice_normalized)
  except UrlErrror as e:
-  streamlit.error()
+    streamlit.error()
     
 #streamlit.text(fruityvice_response.json())
 
