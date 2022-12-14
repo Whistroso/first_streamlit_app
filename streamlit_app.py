@@ -25,6 +25,6 @@ streamlit.header("Fruityvice Fruit Advice!")
 streamlit.text(fruityvice_response.json())
 
 # Separate key values for json data into columns
-fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+#fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # show the newly created df
 streamlit.dataframe(fruityvice_normalized)
