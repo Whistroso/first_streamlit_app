@@ -35,6 +35,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # show the newly created df
 streamlit.dataframe(fruityvice_normalized)
 
+streamlit.text("Hello from Snowflake:")
 my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
 my_cur = my_cnx.cursor()
 my_cur.execute("SELECT CURRENT_USER(), CURRENT_ACCOUNT(), CURRENT_REGION()")
