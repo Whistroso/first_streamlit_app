@@ -26,16 +26,20 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon"
 #New section to displau response from the api
 streamlit.header("Fruityvice Fruit Advice!")
 
+def get_fruityvice_data(this_fruit_choice):
+  streamlit.write('The user entered ', fruit_choice)
+  # Separate key values for json data into columns
+  fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+  return fruityvice_normalized
+
 try:
   fruit_choice = streamlit.text_input('What fruit would you like information about?')
   if not fruit_choice:
       streamlit.error("Please select a fruit to get information.")
   else:
-    streamlit.write('The user entered ', fruit_choice)
-    # Separate key values for json data into columns
-    fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+    back_from_function = get_fruityvice_data(fruit_choice)
     # show the newly created df
-    streamlit.dataframe(fruityvice_normalized)
+    streamlit.dataframe(back_from_function)
 except UrlErrror as e:
   streamlit.error()
     
