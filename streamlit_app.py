@@ -47,7 +47,7 @@ except UrlErrror as e:
 
 
 
-streamlit.stop()
+#streamlit.stop()
 streamlit.text("Hello from Snowflake:")
 streamlit.header('The fruit load list contains:')
 
