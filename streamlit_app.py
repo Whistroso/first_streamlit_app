@@ -46,8 +46,6 @@ except UrlErrror as e:
 #streamlit.text(fruityvice_response.json())
 
 
-
-#streamlit.stop()
 streamlit.text("Hello from Snowflake:")
 streamlit.header('The fruit load list contains:')
 
@@ -66,4 +64,7 @@ if streamlit.button('Get Fruit Load list'):
 add_my_fruit = streamlit.text_input('What fruit would you like to add?')
 streamlit.write('Thanks for adding ', add_my_fruit)
 
+
+
+streamlit.stop()
 my_cur.execute("insert into fruit_load_list value ('from streamlit')")
